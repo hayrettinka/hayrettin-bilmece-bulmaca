@@ -15,11 +15,6 @@ const intlMiddleware = createMiddleware({
 });
 
 export async function middleware(req: NextRequest) {
-  // Handle root path redirect to default locale
-  if (req.nextUrl.pathname === '/') {
-    return NextResponse.redirect(new URL('/tr', req.url));
-  }
-
   // Handle auth for admin routes
   if (req.nextUrl.pathname.includes('/admin')) {
     let response = NextResponse.next({
@@ -94,6 +89,10 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  // Match internationalized pathnames and admin routes
-  matcher: ['/', '/(tr|en)/:path*', '/admin/:path*']
+  // Match all pathnames except for
+  // - api (API routes)
+  // - _next/static (static files)
+  // - _next/image (image optimization files)
+  // - favicon.ico (favicon file)
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
 };
