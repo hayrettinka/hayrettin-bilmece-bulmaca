@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/lib/supabase';
 import { ArrowLeft, ArrowRight, CheckCircle, XCircle, RotateCcw } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 type Riddle = {
   id: string;
@@ -18,7 +19,9 @@ type Riddle = {
   image: string | null;
 };
 
-export default function QuizPage({ params: { locale } }: { params: { locale: string } }) {
+export default function QuizPage() {
+  const pathname = usePathname();
+  const locale = useMemo(() => (pathname?.split('/')[1] || 'tr'), [pathname]);
   const [riddles, setRiddles] = useState<Riddle[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<string[]>([]);

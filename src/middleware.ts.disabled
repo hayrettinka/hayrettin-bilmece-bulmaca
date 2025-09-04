@@ -2,13 +2,14 @@ import createMiddleware from 'next-intl/middleware';
 import { createServerClient } from '@supabase/ssr';
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { locales, defaultLocale } from './i18n';
 
 const intlMiddleware = createMiddleware({
   // A list of all locales that are supported
-  locales: ['tr', 'en'],
+  locales: locales,
 
   // Used when no locale matches
-  defaultLocale: 'tr',
+  defaultLocale: defaultLocale,
 
   // Detect locale based on user's browser language
   localeDetection: true

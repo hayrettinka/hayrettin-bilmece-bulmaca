@@ -1,9 +1,13 @@
+'use client';
+
 import Link from 'next/link';
 import { MapPin, Compass, Star } from 'lucide-react';
 import { AuthHeader } from '@/components/AuthHeader';
+import { useParams } from 'next/navigation';
 
-export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
+export default function HomePage() {
+  const params = useParams();
+  const locale = (params?.locale as string) || 'tr';
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Header */}

@@ -1,19 +1,34 @@
+'use client';
+
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import "../globals.css";
 
-export default async function LocaleLayout({
+// Import messages directly
+import trMessages from '../../messages/tr.json';
+import enMessages from '../../messages/en.json';
+
+const messages = {
+  tr: trMessages,
+  en: enMessages
+};
+
+export default function LocaleLayout({
   children,
-  params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-  const messages = await getMessages();
+  const params = useParams();
+  const locale = (params?.locale as string) || 'tr';
+  const [currentMessages, setCurrentMessages] = useState(messages[locale as keyof typeof messages] || messages.tr);
+
+  useEffect(() => {
+    setCurrentMessages(messages[locale as keyof typeof messages] || messages.tr);
+  }, [locale]);
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider messages={currentMessages} locale={locale}>
       {children}
     </NextIntlClientProvider>
   );

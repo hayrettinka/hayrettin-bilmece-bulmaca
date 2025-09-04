@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/lib/supabase';
 import { MapPin, Calendar, Eye, EyeOff, Shuffle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 type Riddle = {
   id: string;
@@ -19,7 +20,9 @@ type Riddle = {
   created_at: string;
 };
 
-export default function RiddlesPage({ params: { locale } }: { params: { locale: string } }) {
+export default function RiddlesPage() {
+  const pathname = usePathname();
+  const locale = useMemo(() => (pathname?.split('/')[1] || 'tr'), [pathname]);
   const [riddles, setRiddles] = useState<Riddle[]>([]);
   const [filteredRiddles, setFilteredRiddles] = useState<Riddle[]>([]);
   const [loading, setLoading] = useState(true);
