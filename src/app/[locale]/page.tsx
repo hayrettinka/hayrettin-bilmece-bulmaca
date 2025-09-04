@@ -59,12 +59,12 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center">
           <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            {locale === 'tr' ? 'Türkiye'yi Bilmecelerle Keşfet' : 'Discover Turkey Through Riddles'}
+            {locale === 'tr' ? 'Türkiye\'yi Bilmecelerle Keşfet' : 'Discover Turkey Through Riddles'}
           </h2>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
             {locale === 'tr' 
-              ? 'Türkiye'nin tarihi yerleri, kültürel simgeleri ve ikonik konumları hakkındaki bilginizi test edin'
-              : 'Test your knowledge about Turkey's historical places, cultural landmarks, and iconic locations'
+              ? 'Türkiye\'nin tarihi yerleri, kültürel simgeleri ve ikonik konumları hakkındaki bilginizi test edin'
+              : 'Test your knowledge about Turkey\'s historical places, cultural landmarks, and iconic locations'
             }
           </p>
           
