@@ -1,0 +1,40 @@
+{
+  "navigation": {
+    "home": "Home",
+    "riddles": "Riddles",
+    "about": "About"
+  },
+  "hero": {
+    "title": "Discover Turkey Through Riddles",
+    "subtitle": "Test your knowledge about Turkey's historical places, cultural landmarks, and iconic locations",
+    "startButton": "Start Quiz",
+    "exploreButton": "Explore Riddles"
+  },
+  "riddles": {
+    "title": "Historical Place Riddles",
+    "filterByLocation": "Filter by Location",
+    "filterByTags": "Filter by Tags",
+    "allLocations": "All Locations",
+    "generateQuiz": "Generate Random Quiz",
+    "showAnswer": "Show Answer",
+    "hideAnswer": "Hide Answer",
+    "nextRiddle": "Next Riddle",
+    "exportQuiz": "Export Quiz"
+  },
+  "quiz": {
+    "question": "Question",
+    "answer": "Answer",
+    "location": "Location",
+    "establishedAt": "Established",
+    "nearSpots": "Nearby Spots",
+    "tags": "Tags"
+  },
+  "footer": {
+    "description": "Discover Turkey's rich history and culture through interactive riddles.",
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "turkish": "Türkçe",
+    "english": "English"
+  }
+}

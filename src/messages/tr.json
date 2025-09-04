@@ -1,0 +1,40 @@
+{
+  "navigation": {
+    "home": "Ana Sayfa",
+    "riddles": "Bilmeceler",
+    "about": "Hakkında"
+  },
+  "hero": {
+    "title": "Türkiye'yi Bilmecelerle Keşfet",
+    "subtitle": "Türkiye'nin tarihi yerleri, kültürel simgeleri ve ikonik konumları hakkındaki bilginizi test edin",
+    "startButton": "Quiz Başlat",
+    "exploreButton": "Bilmeceleri Keşfet"
+  },
+  "riddles": {
+    "title": "Tarihi Mekan Bilmeceleri",
+    "filterByLocation": "Lokasyona Göre Filtrele",
+    "filterByTags": "Etiketlere Göre Filtrele",
+    "allLocations": "Tüm Lokasyonlar",
+    "generateQuiz": "Rastgele Quiz Oluştur",
+    "showAnswer": "Cevabı Göster",
+    "hideAnswer": "Cevabı Gizle",
+    "nextRiddle": "Sonraki Bilmece",
+    "exportQuiz": "Quiz'i Dışa Aktar"
+  },
+  "quiz": {
+    "question": "Soru",
+    "answer": "Cevap",
+    "location": "Lokasyon",
+    "establishedAt": "Kurulma Tarihi",
+    "nearSpots": "Yakın Yerler",
+    "tags": "Etiketler"
+  },
+  "footer": {
+    "description": "Türkiye'nin zengin tarihini ve kültürünü interaktif bilmecelerle keşfedin.",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "language": {
+    "turkish": "Türkçe",
+    "english": "English"
+  }
+}
