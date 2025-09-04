@@ -15,6 +15,11 @@ const intlMiddleware = createMiddleware({
 });
 
 export async function middleware(req: NextRequest) {
+  // Handle root path redirect to default locale
+  if (req.nextUrl.pathname === '/') {
+    return NextResponse.redirect(new URL('/tr', req.url));
+  }
+
   // Handle auth for admin routes
   if (req.nextUrl.pathname.includes('/admin')) {
     let response = NextResponse.next({
