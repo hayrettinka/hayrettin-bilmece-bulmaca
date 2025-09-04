@@ -8,3 +8,20 @@
 	- Siteye girdikten sonra manuel şekilde dil değiştirilebilir.
 	- next.js , supabase ve vercel kullanılacak.
 
+---
+
+Yapılan işler (2025-09-04):
+- [x] `[locale]` route param kullanımını düzelt (layout ve page)
+  - `src/app/[locale]/layout.tsx`: `params` artık Promise değil, doğrudan obje olarak alınıyor.
+  - `src/app/[locale]/page.tsx`: aynı şekilde düzeltildi.
+- [x] `vercel.json` root rewrite kaldırıldı; yönlendirme `middleware` `defaultLocale: 'tr'` ile yapılacak.
+
+Deploy Kontrol Listesi:
+- [x] Vercel Production env var'ları eklendi: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- [x] `vercel.json` root rewrite kaldırıldı (çakışmayı önlemek için)
+- [x] Admin middleware yalnızca `/admin` path'inde Supabase session kontrolü yapıyor
+- [x] `/tr` ve `/en` rotaları build sonrası mevcut
+
+Notlar:
+- 404 sebebi büyük ihtimalle `params`'in yanlış Promise tipiyle kullanımıydı. Düzeltildi.
+
