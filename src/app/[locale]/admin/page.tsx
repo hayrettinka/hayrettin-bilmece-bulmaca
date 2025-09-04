@@ -82,6 +82,12 @@ export default function AdminPage({ params: { locale } }: { params: { locale: st
     e.preventDefault();
     setSaveLoading(true);
 
+    if (!user) {
+      alert(locale === 'tr' ? 'Kullanıcı bilgisi bulunamadı!' : 'User information not found!');
+      setSaveLoading(false);
+      return;
+    }
+
     try {
       const riddleData = {
         question_text: formData.question_text,
@@ -92,7 +98,6 @@ export default function AdminPage({ params: { locale } }: { params: { locale: st
         near_spots: formData.near_spots ? formData.near_spots.split(',').map(s => s.trim()).filter(s => s) : null,
         short_def: formData.short_def || null,
         image: formData.image || null,
-        created_at: formData.created_at || new Date().toISOString(),
         created_by: user.id
       };
 
@@ -133,6 +138,11 @@ export default function AdminPage({ params: { locale } }: { params: { locale: st
   };
 
   const handleJsonUpload = async () => {
+    if (!user) {
+      alert(locale === 'tr' ? 'Kullanıcı bilgisi bulunamadı!' : 'User information not found!');
+      return;
+    }
+
     try {
       const data = JSON.parse(jsonInput);
       const riddles = Array.isArray(data) ? data : [data];
