@@ -23,6 +23,11 @@ Deploy Kontrol Listesi:
 - [x] `/tr` ve `/en` rotaları build sonrası mevcut
 - [x] Production build `next build` (Turbopack kapalı) ile alınacak
 
+Dağıtım Stratejisi (Güncel):
+- [x] Vercel kaldırıldı (repo içinden tüm ayak izleri silindi)
+- [ ] Alternatif: Docker/Render/Railway/Fly.io veya kendi sunucun
+- [ ] Prod komutları: `npm run build && npm run start`
+
 Notlar:
 - 404 sebebi büyük ihtimalle `params`'in yanlış Promise tipiyle kullanımıydı. Düzeltildi.
 

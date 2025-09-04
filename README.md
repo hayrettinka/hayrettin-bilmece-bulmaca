@@ -104,22 +104,15 @@ The `riddles` table contains:
 
 ## Deployment
 
-### Vercel (Recommended)
+### Deployment
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
-   ```
-
-2. **Deploy to Vercel**
-   - Connect your GitHub repository to Vercel
-   - Add environment variables in Vercel dashboard
-   - Deploy automatically
-
-3. **Configure domain** (optional)
-   - Add custom domain in Vercel settings
+- Deploy to any Node.js host (Docker, Render, Railway, Fly.io, your own server).
+- Production build:
+  ```bash
+  npm run build
+  npm run start
+  ```
+  The app listens on port 3000 by default.
 
 ## Contributing
 
