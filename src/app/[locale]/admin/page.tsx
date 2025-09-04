@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/components/AuthHeader';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { 
   Plus, 
@@ -32,9 +32,11 @@ type Riddle = {
   created_at: string;
 };
 
-export default function AdminPage({ params: { locale } }: { params: { locale: string } }) {
+export default function AdminPage() {
   const { user, loading } = useAuth();
   const router = useRouter();
+  const pathname = usePathname();
+  const locale = useMemo(() => (pathname?.split('/')[1] || 'tr'), [pathname]);
   const [riddles, setRiddles] = useState<Riddle[]>([]);
   const [showForm, setShowForm] = useState(false);
   const [editingRiddle, setEditingRiddle] = useState<Riddle | null>(null);
