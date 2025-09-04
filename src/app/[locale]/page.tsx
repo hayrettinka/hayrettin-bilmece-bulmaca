@@ -1,17 +1,5 @@
 import Image from "next/image";
-
-export default fu        <div className="text-center">
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            {locale === 'tr' ? 'Türkiye\'yi Bilmecelerle Keşfet' : 'Discover Turkey Through Riddles'}
-          </h2>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            {locale === 'tr' 
-              ? 'Türkiye\'nin tarihi yerleri, kültürel simgeleri ve ikonik konumları hakkındaki bilginizi test edin'
-              : 'Test your knowledge about Turkey\'s historical places, cultural landmarks, and iconic locations'
-            }
-          </p>e() {
-  return (
-    import Link from 'next/link';
+import Link from 'next/link';
 import { MapPin, Compass, Star } from 'lucide-react';
 import { AuthHeader } from '@/components/AuthHeader';
 
