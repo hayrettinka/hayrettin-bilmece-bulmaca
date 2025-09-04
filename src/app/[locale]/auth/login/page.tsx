@@ -30,7 +30,7 @@ export default function LoginPage({ params: { locale } }: { params: { locale: st
       } else {
         router.push(`/${locale}/admin`);
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred');
     } finally {
       setLoading(false);
@@ -55,7 +55,7 @@ export default function LoginPage({ params: { locale } }: { params: { locale: st
           'Sign up successful! Please check your email.'
         );
       }
-    } catch (err) {
+    } catch {
       setError('An unexpected error occurred');
     } finally {
       setLoading(false);

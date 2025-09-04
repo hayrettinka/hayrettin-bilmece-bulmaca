@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
-import { MapPin, Tag, Calendar, Eye, EyeOff, Download, Shuffle } from 'lucide-react';
+import { MapPin, Calendar, Eye, EyeOff, Shuffle } from 'lucide-react';
 import Link from 'next/link';
-import { AuthHeader } from '@/components/AuthHeader';
 
 type Riddle = {
   id: string;
