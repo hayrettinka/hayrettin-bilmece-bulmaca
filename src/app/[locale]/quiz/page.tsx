@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { ArrowLeft, ArrowRight, CheckCircle, XCircle, RotateCcw } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 type Riddle = {
@@ -267,9 +268,11 @@ export default function QuizPage({ params: { locale } }: { params: { locale: str
           {/* Image */}
           {currentRiddle.image && (
             <div className="mb-6">
-              <img
+              <Image
                 src={currentRiddle.image}
                 alt={currentRiddle.location}
+                width={800}
+                height={256}
                 className="w-full h-64 object-cover rounded-lg"
               />
             </div>

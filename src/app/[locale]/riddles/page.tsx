@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { MapPin, Calendar, Eye, EyeOff, Shuffle } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type Riddle = {
   id: string;
@@ -227,9 +228,11 @@ export default function RiddlesPage({ params: { locale } }: { params: { locale: 
                 <div className="flex flex-col lg:flex-row gap-6">
                   {riddle.image && (
                     <div className="lg:w-1/3">
-                      <img
+                      <Image
                         src={riddle.image}
                         alt={riddle.location}
+                        width={400}
+                        height={192}
                         className="w-full h-48 object-cover rounded-lg"
                       />
                     </div>
