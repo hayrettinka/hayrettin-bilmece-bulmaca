@@ -21,6 +21,7 @@ Deploy Kontrol Listesi:
 - [x] `vercel.json` root rewrite kaldırıldı (çakışmayı önlemek için)
 - [x] Admin middleware yalnızca `/admin` path'inde Supabase session kontrolü yapıyor
 - [x] `/tr` ve `/en` rotaları build sonrası mevcut
+- [x] Production build `next build` (Turbopack kapalı) ile alınacak
 
 Notlar:
 - 404 sebebi büyük ihtimalle `params`'in yanlış Promise tipiyle kullanımıydı. Düzeltildi.
